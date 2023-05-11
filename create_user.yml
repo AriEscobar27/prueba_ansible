@@ -1,11 +1,7 @@
 ---
 - name: "USER on AIX"
   hosts: all
-  become: yes
-  become_method: enable
   gather_facts: true
-  vars:
-    ansible_connection: network_cli
   collections: 
   - ibm.power_aix
   tasks:
