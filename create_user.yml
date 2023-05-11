@@ -4,17 +4,14 @@
   become: false
   gather_facts: true
   collections: 
-    - ibm.power_aix
-  
+  - ibm.power_aix
   tasks:
-
-
   - name: "Create user"
     ibm.power_aix.user:
       state: present
-      name: "{{user_name}}"
+      name: ari
       change_passwd_on_login: False
-      password: "{{user_pass}}"
+      password: 12345
       attributes:
-        home: /home1/usrpddai
+        home: /home/student
         data: 902
