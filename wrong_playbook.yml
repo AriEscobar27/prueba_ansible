@@ -9,7 +9,6 @@
     ansible.builtin.copy:
       src: /tmp/example
       dest: /tmp/example_remote
-      remote_src: no
 
   - name: Create user student_new
     ansible.builtin.user:
