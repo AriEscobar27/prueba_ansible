@@ -1,7 +1,8 @@
 ---
 - name: "USER on AIX"
   hosts: all
-  become: false
+  become: yes
+  become_method: enable
   gather_facts: true
   vars:
     ansible_connection: network_cli
