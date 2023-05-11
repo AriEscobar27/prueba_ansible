@@ -3,9 +3,10 @@
   hosts: all
   gather_facts: true
   collections:
-  - ibm.power_aix
+  - community.windows
   tasks:
-  - name: mount
-    ibm.power_aix.mount:
-      state: mount
-      mount_dir: /mnt/tesfs
+  - name: Unzip a bz2 (BZip) file
+    community.windows.win_unzip:
+      src: C:\Users\Phil\Logs.bz2
+      dest: C:\Users\Phil\OldLogs
+      creates: C:\Users\Phil\OldLogs
