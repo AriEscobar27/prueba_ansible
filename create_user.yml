@@ -6,12 +6,7 @@
   collections: 
   - ibm.power_aix
   tasks:
-  - name: "Create user"
-    ibm.power_aix.user:
-      state: present
-      name: ari
-      change_passwd_on_login: False
-      password: 12345
-      attributes:
-        home: /home/student
-        data: 902
+  - name: Mount filesystems
+    ibm.power_aix.mount:
+      state: mount
+      mount_dir: /mnt/tesfs
