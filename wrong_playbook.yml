@@ -12,7 +12,7 @@
       remote_src: no
       
   - name: Create user student_new
-    user:
+    ansible.builtin.user:
     state: present
     
   - name: latest Apache version installed
