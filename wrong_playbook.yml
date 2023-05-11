@@ -1,0 +1,43 @@
+---
+- name: Correct the mistakes
+  hosts: all
+  gather_facts: yes
+  become: yes
+  
+  tasks:
+  - name: Copy file from controller to remote host
+    ansible.builtin.copy:
+      src: "/tmp/example"
+      dest: "/tmp/example_remote"
+      remote_src: no
+      
+  - name: Create user student_new
+    user:
+    state: present
+    
+  - name: latest Apache version installed
+    yum:
+      name: httpd
+      state: latest
+  - name: Apache enabled and running
+    service:
+      name: httpd
+      enabled: true
+      state: started
+      
+  - name: copy index.html
+    copy:
+      src: ~/ansible-files/index.html
+      dest: /var/www/html/
+      
+  - name: print rhel version
+    debug:
+      msg: "The distribution of this server is RED HAT 8.7"
+    when: "ansible-distribution" == "REDHAT" and "ansible-distribution-version" == "8.7"
+    
+  - name: Create template with user input from survey
+    template:
+      src: template.j2
+      dest: /tmp/template
+ 
+        
