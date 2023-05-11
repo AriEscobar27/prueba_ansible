@@ -1,0 +1,20 @@
+---
+- name: "USER on AIX"
+  hosts: all
+  become: false
+  gather_facts: true
+  collections: 
+    - ibm.power_aix
+  
+  tasks:
+
+
+  - name: "Create user"
+    ibm.power_aix.user:
+      state: present
+      name: "{{user_name}}"
+      change_passwd_on_login: False
+      password: "{{user_pass}}"
+      attributes:
+        home: /home1/usrpddai
+        data: 902
