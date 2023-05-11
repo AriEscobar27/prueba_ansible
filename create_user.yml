@@ -3,8 +3,8 @@
   hosts: all
   become: false
   gather_facts: true
-    collections: 
-        - ibm.power_aix
+  collections: 
+  - ibm.power_aix
   tasks:
   - name: Mount filesystems
     ibm.power_aix.mount:
