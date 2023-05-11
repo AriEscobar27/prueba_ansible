@@ -3,6 +3,8 @@
   hosts: all
   become: false
   gather_facts: true
+  vars:
+    ansible_connection: network_cli
   collections: 
   - ibm.power_aix
   tasks:
