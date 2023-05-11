@@ -13,7 +13,7 @@
 
   - name: Create user student_new
     ansible.builtin.user:
-    state: present
+      state: present
     
   - name: latest Apache version installed
     yum:
