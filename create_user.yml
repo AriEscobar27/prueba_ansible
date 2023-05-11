@@ -1,11 +1,11 @@
 ---
-- name: "USER on AIX"
+- name: test
   hosts: all
   gather_facts: true
-  collections: 
+  collections:
   - ibm.power_aix
   tasks:
-  - name: Mount filesystems
+  - name: mount
     ibm.power_aix.mount:
       state: mount
       mount_dir: /mnt/tesfs
