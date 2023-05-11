@@ -5,11 +5,6 @@
   become: yes
   
   tasks:
-  - name: Copy file from controller to remote host
-    ansible.builtin.copy:
-      src: /tmp/example
-      dest: /tmp/example_remote
-
   - name: Create user student_new
     ansible.builtin.user:
       state: present
