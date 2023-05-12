@@ -7,6 +7,7 @@
   tasks:
   - name: Create user student_new
     ansible.builtin.user:
+      name: student_new
       state: present
     
   - name: latest Apache version installed
