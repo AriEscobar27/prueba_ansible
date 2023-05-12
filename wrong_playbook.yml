@@ -23,7 +23,7 @@
       
   - name: copy index.html
     copy:
-      src: ~/ansible-files/index.html
+      src: index.html
       dest: /var/www/html/
       
   - name: print rhel version
