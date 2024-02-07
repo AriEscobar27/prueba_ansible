@@ -1,9 +1,13 @@
 ---
-- name: Importar de role common
-  ansible.builtin.import_tasks: hola.yml
+- name: do something
+  include_role:
+    name: common
+    tasks_from: hola
 
 - name: Mensaje pera
   ansible.builtin.import_tasks: pera.yml
 
-- name: Importar de role common
-  ansible.builtin.import_tasks: manzana.yml
+- name: do something
+  include_role:
+    name: common
+    tasks_from: manzana
