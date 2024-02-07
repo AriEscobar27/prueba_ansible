@@ -1,0 +1,3 @@
+---
+- name: "Msg1"
+  ansible.builtin.import_tasks: hola.yml
