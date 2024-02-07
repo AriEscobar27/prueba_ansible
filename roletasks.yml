@@ -1,0 +1,7 @@
+---
+- name: Intro to Ansible Playbooks
+  hosts: all
+  roles:
+    - common
+    - msg1
+    - msg2
