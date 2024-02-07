@@ -1,3 +1,6 @@
 ---
-- name: "Msg1"
+- name: Importar de role common
   ansible.builtin.import_tasks: hola.yml
+
+- name: Mensaje pera
+  ansible.builtin.import_tasks: pera.yml
