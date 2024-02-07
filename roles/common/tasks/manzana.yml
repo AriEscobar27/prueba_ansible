@@ -1,0 +1,4 @@
+---
+- name: Mensaje Mnazana
+  ansible.builtin.debug:
+    msg: "Manzana"
