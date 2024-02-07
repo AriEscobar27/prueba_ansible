@@ -4,3 +4,6 @@
 
 - name: Mensaje pera
   ansible.builtin.import_tasks: pera.yml
+
+- name: Importar de role common
+  ansible.builtin.import_tasks: manzana.yml
