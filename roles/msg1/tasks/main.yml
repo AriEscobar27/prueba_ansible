@@ -3,6 +3,8 @@
   include_role:
     name: common
     tasks_from: hola
+  vars:
+    nombre: "Ari"
 
 - name: Mensaje pera
   ansible.builtin.import_tasks: pera.yml
