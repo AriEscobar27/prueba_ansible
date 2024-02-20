@@ -1,4 +1,4 @@
 ---
 - name: Mensaje Hola
   ansible.builtin.debug:
-    msg: "Hola {{ nombre }}"
+    msg: "Hola {{ nombre_common }}"
