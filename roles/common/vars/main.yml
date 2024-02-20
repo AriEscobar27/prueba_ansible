@@ -1,2 +1,2 @@
 ---
-nombre_common: {{ nombre }}
+nombre_common: "{{ nombre }}"
