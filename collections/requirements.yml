@@ -5,3 +5,4 @@ collections:
   - name: ibm.power_aix
     version: 1.6.1
   - name: redhat.satellite
+    version: 3.9.0
