@@ -6,4 +6,4 @@ collections:
     version: 1.6.1
   - name: community.general
     version: 6.0.0
-  - name: sap_install
+  - name: redhat.sap_install
