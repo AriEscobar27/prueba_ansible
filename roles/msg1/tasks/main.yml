@@ -5,11 +5,23 @@
     tasks_from: hola
   vars:
     nombre: "Ari"
+  apply:
+    tags: 
+      - holamundo
+  tags: 
+    - never
 
 - name: Mensaje pera
   ansible.builtin.import_tasks: pera.yml
+  tags:
+    - never
 
 - name: do something
   include_role:
     name: common
     tasks_from: manzana
+  apply:
+    tags: 
+      - manzana
+  tags: 
+    - never
