@@ -5,7 +5,7 @@
 
   - name: Get Selinux
     ansible.builtin.shell: getenforce
-    registry: selinux_state
+    register: selinux_state
 
   - name: Print Selinux
     debug:
