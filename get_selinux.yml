@@ -1,0 +1,13 @@
+---
+- name: Selinux State
+  hosts: all
+  tasks:
+
+  - name: Get Selinux
+    ansible.builtin.shell: getenforce
+    registry: selinux_state
+
+  - name: Print Selinux
+    debug:
+      msg: "{{ hostname }}" "{{ selinux }}"
+
