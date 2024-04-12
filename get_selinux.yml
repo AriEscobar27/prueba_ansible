@@ -4,7 +4,7 @@
   tasks:
 
   - name: Get Selinux
-    ansible.builtin.shell: getenforce
+    ansible.builtin.command: getenforce
     register: selinux_state
 
   - name: Print Selinux
