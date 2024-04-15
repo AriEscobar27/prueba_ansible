@@ -13,12 +13,9 @@
   - name: Print Selinux
     debug:
       msg: "{{ ansible_hostname }} {{ selinux_state }}"
-
-- name: Selinux State
-  hosts: localhost
-  tasks:
   
   - name: Template a file 
+    delegate_to: localhost
     ansible.builtin.template:
       src: selinux.j2
       dest: /tmp/selinux.txt
