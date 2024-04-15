@@ -1,6 +1,7 @@
 ---
 - name: Selinux State
   hosts: all
+  become: true
   tasks:
 
   - name: Get Selinux
