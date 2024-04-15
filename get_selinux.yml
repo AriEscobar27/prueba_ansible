@@ -11,3 +11,12 @@
     debug:
       msg: "{{ ansible_hostname }} {{ selinux_state }}"
 
+ - name: Template a file 
+   ansible.builtin.template:
+     src: selinux.j2
+     dest: /tmp/selinux.txt
+
+
+
+      
+
