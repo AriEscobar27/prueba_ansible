@@ -13,13 +13,15 @@
   - name: Print Selinux
     debug:
       msg: "{{ ansible_hostname }} {{ selinux_state }}"
-  
+      
   - name: Template a file 
     delegate_to: localhost
     ansible.builtin.template:
       src: selinux.j2
       dest: /tmp/selinux.txt
 
+  - name: Get Selinux
+    ansible.builtin.command: cat /tmp/selinux.txt
 
 
       
