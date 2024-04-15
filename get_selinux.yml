@@ -7,6 +7,9 @@
     ansible.builtin.command: getenforce
     register: selinux_state
 
+  - name: Get Selinux
+    ansible.builtin.set_fact: selinux_state="{{ selinux_state.result }}"
+
   - name: Print Selinux
     debug:
       msg: "{{ ansible_hostname }} {{ selinux_state }}"
