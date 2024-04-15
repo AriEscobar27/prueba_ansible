@@ -8,7 +8,7 @@
     register: selinux_state
 
   - name: Get Selinux
-    ansible.builtin.set_fact: selinux_state="{{ selinux_state.result }}"
+    ansible.builtin.set_fact: selinux_state="{{ selinux_state.stdout }}"
 
   - name: Print Selinux
     debug:
