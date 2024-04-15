@@ -9,5 +9,5 @@
 
   - name: Print Selinux
     debug:
-      msg: "{{ hostname }} {{ selinux }}"
+      msg: "{{ ansible_hostname }} {{ selinux_state }}"
 
