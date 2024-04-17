@@ -2,6 +2,8 @@
 - name: Selinux State
   hosts: all
   become: true
+  vars_files:
+    - "./vars/main.yml"
   tasks:
 
   - name: Get Selinux
@@ -21,7 +23,7 @@
 
   - name: Print nombre_prueba
     ansible.builtin.debug:
-      msg: "{{ nombre_prueba }}"
+      msg: "{{ item.nombre_prueba }}"
     loop: '{{ vars[servicio] }}'
 
 
