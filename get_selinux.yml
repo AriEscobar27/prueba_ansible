@@ -15,6 +15,15 @@
     ansible.builtin.debug:
       msg: "{{ ansible_hostname }} {{ selinux_state }}"
 
+  - name: Print nombre
+    ansible.builtin.debug:
+      msg: "{{ servicio }}"
+
+  - name: Print nombre_prueba
+    ansible.builtin.debug:
+      msg: "{{ item.nombre_prueba }}"
+    loop: '{{ vars[servicio] }}'
+
 
       
 
