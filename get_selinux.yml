@@ -21,7 +21,7 @@
 
   - name: Print nombre_prueba
     ansible.builtin.debug:
-      msg: "{{ item.nombre_prueba }}"
+      msg: "{{ nombre_prueba }}"
     loop: '{{ vars[servicio] }}'
 
 
