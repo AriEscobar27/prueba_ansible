@@ -26,6 +26,15 @@
       msg: "{{ item.nombre_prueba }}"
     loop: '{{ vars[servicio] }}'
 
+  - name: Print nombre_prueba
+    ansible.builtin.command: echo "{{ item.nombre_prueba }}"
+    loop: '{{ vars[servicio] }}'
+    register: resultado
+
+  - name: Print nombre_prueba
+    ansible.builtin.debug:
+      msg: "{{ resultado.stdout }}"
+
 
       
 
