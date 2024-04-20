@@ -33,7 +33,7 @@
 
   - name: Print nombre_prueba
     ansible.builtin.debug:
-      msg: "{{ resultado.stdout }}"
+      msg: "{{ resultado.results }}"
 
 
       
