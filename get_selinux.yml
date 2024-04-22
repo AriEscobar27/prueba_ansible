@@ -31,15 +31,27 @@
     loop: '{{ vars[servicio] }}'
     register: resultado
 
+#  - name: Print nombre_prueba
+#    ansible.builtin.set_fact:
+#     resultado_sesion: "'{{ resultado.results | map(attribute='stdout') | string }}'"
+#   loop: "{{ resultado.results }}"
+
   - name: Print nombre_prueba
     ansible.builtin.set_fact:
-      resultado_sesion: "'{{ resultado.results | map(attribute='stdout') | string }}'"
-
+      resultado_sesion: "{{ item.stdout }}"
+    loop: "{{ resultado.results }}"
+    
   - name: falla
     fail:
       msg: "Fallo"
     when: resultado_sesion!='Escobar' 
 
+#  - name: falla
+#    fail:
+#      msg: "Fallo"
+#    when: "item.stdout!='Escobar' 
+#    loop: "{{ resultado.results }}"
+    
   - name: Print nombre_prueba
     ansible.builtin.debug:
       msg: "{{ resultado_sesion }}"
