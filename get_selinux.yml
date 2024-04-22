@@ -35,6 +35,11 @@
     ansible.builtin.set_fact:
       resultado_sesion: "'{{ resultado.results | map(attribute='stdout') | string }}'"
 
+  - name: falla
+    fail:
+      msg: "Fallo"
+    when: resultado_sesion!='Escobar' 
+
   - name: Print nombre_prueba
     ansible.builtin.debug:
       msg: "{{ resultado_sesion }}"
