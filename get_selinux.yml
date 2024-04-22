@@ -32,8 +32,12 @@
     register: resultado
 
   - name: Print nombre_prueba
+    ansible.builtin.set_fact:
+      resultado_sesion: "'{{ resultado.results | map(attribute='stdout') | string }}'"
+
+  - name: Print nombre_prueba
     ansible.builtin.debug:
-      msg: "'{{ resultado.results | map(attribute='stdout') | string }}'"
+      msg: "{{ resultado_sesion }}"
 
 
       
