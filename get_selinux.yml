@@ -38,7 +38,7 @@
 
   - name: Print nombre_prueba
     ansible.builtin.set_fact:
-      resultado_sesion: "{{ item.stdout }}"
+      resultado_sesion: "{{ item.stdout_lines[0] }}"
     loop: "{{ resultado.results }}"
     
   - name: falla
