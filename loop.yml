@@ -1,0 +1,11 @@
+---
+- name: Selinux State
+  hosts: all
+  become: true
+  vars_files:
+    - "./vars/main.yml"
+  tasks:
+
+  - name: Prueba loop
+    ansible.builtin.include_tasks: main.yml
+    
