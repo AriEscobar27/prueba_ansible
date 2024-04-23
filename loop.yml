@@ -7,5 +7,5 @@
   tasks:
 
   - name: Prueba loop
-    ansible.builtin.include_tasks: main.yml
+    ansible.builtin.include_tasks: prueba_loop.yml
     
