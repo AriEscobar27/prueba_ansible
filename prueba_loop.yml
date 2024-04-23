@@ -16,6 +16,6 @@
     ansible.builtin.command: echo "{{ item.nombre_prueba }}"
     loop: '{{ vars[servicio] }}'
     register: resultado2
-    until: resultado2.stdout_lines[0]=='Escobar'
+    until: resultado2.results.stdout_lines[0]=='Escobar'
     retries: 10
     delay: 30
