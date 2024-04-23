@@ -1,4 +1,20 @@
 ---
-- name: Mensaje Pera
-  ansible.builtin.debug:
-    msg: "Pera"
+
+  - name: Print nombre_prueba
+    ansible.builtin.command: echo "{{ item.nombre_prueba }}"
+    loop: '{{ vars[servicio] }}'
+    register: resultado
+    
+  - name: Print nombre_prueba
+    ansible.builtin.set_fact:
+      resultado_sesion: "{{ resultado.stdout }}"
+   no_log: false
+   failed_when: resultado.stdout_lines[0]=='Escobar'
+
+  - name: Print nombre_prueba
+    ansible.builtin.command: echo "{{ item.nombre_prueba }}"
+    loop: '{{ vars[servicio] }}'
+    register: resultado2
+    until: resultado2.stdout_lines[0]=='Escobar'
+    retries: 10
+    delay: 30
