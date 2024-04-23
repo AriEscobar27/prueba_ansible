@@ -7,9 +7,10 @@
     
   - name: Print nombre_prueba
     ansible.builtin.set_fact:
-      resultado_sesion: "{{ resultado.stdout }}"
+      resultado_sesion: "{{ item.stdout }}"
     no_log: false
-    failed_when: resultado.stdout_lines[0]=='Escobar'
+    failed_when: item.stdout_lines[0]=='Escobar'
+    loop: "{{ resultado.results }}"
 
   - name: Print nombre_prueba
     ansible.builtin.command: echo "{{ item.nombre_prueba }}"
