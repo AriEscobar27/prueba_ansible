@@ -7,10 +7,10 @@
     
   - name: Print nombre_prueba
     ansible.builtin.set_fact:
-      resultado_sesion: "{{ item.stdout }}"
+      resultado_sesion: "{{ resultado.stdout }}"
     no_log: false
-    failed_when: item.stdout_lines[0]!='Escobar'
-    loop: "{{ resultado.results }}"
+    failed_when: resultado.stdout_lines[0]!='Escobar'
+    #loop: "{{ resultado.results }}"
 
   - name: Print nombre_prueba
     ansible.builtin.command: echo "{{ item.nombre_prueba }}"
@@ -19,3 +19,4 @@
     until: resultado2.stdout_lines[0]=='Escobar'
     retries: 10
     delay: 30
+#
