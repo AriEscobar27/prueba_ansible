@@ -31,6 +31,10 @@
     loop: '{{ vars[servicio] }}'
     register: resultado
 
+  - name: Print nombre_prueba
+    ansible.builtin.debug:
+      msg: "{{ resultado.results }}"
+      
 #  - name: Print nombre_prueba
 #    ansible.builtin.set_fact:
 #     resultado_sesion: "'{{ resultado.results | map(attribute='stdout') | string }}'"
