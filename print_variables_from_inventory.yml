@@ -7,7 +7,7 @@
   - name: "Banco Pichincha ::: Start Services WAS Omnicanal ::: Inicia servicios"
     ansible.builtin.command: echo {{ item }}
     register: server_list
-    loop: '{{ servers }}'
+    loop: '{{ servers | list }}'
 
 
 
