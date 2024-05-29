@@ -5,7 +5,7 @@
   tasks:
 
   - name: "Banco Pichincha ::: Start Services WAS Omnicanal ::: Inicia servicios"
-    ansible.builtin.command: echo {{ item }}
+    ansible.builtin.command: echo {{ item.item }}
     register: server_list
     loop: '{{ servers | list }}'
 
