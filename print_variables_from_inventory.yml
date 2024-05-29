@@ -13,4 +13,7 @@
     debug:
       msg: "{{ server_list }}"
 
+  - name: print rc
+    debug:
+      msg: "{{ server_list.rc }}"
 
