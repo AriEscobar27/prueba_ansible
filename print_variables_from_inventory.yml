@@ -9,5 +9,8 @@
     register: server_list
     loop: "{{ lookup('ansible.builtin.dict', servers) | list }}"
 
+  - name: print server_list
+    debug:
+      msg: "{{ server_list }}"
 
 
