@@ -14,6 +14,10 @@
       msg: "{{ server_list }}"
 
   - name: print rc
-    debug:
-      vars: "{{ item.rc }}"
+    set_fact:
+      RC: "{{ item.rc }}"
     loop: "{{ server_list.results }}"
+
+  - name: print server_list
+    debug:
+      msg: "{{ RC }}"
