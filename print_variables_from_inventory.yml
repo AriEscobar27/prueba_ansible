@@ -15,7 +15,7 @@
 
   - name: Se declara lista
     set_fact:
-      RCS: "{{ pods | json_query(query) | list }}"
+      RCS: "{{ server_list | json_query(query) | list }}"
     vars:
       query: 'results[].rc'
 
