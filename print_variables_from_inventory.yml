@@ -13,11 +13,14 @@
     debug:
       msg: "{{ server_list }}"
 
-  - name: print rc
+  - name: Se declara lista
     set_fact:
-      RC: "{{ item.rc }}"
-    loop: "{{ server_list.results }}"
+      RCS: "{{ pods | json_query(query) | list }}"
+    vars:
+      query: 'results[].rc'
 
-  - name: print server_list
+  - name: Imprime namespaces con loop
     debug:
-      msg: "{{ RC }}"
+      msg: "{{ item }}"
+    loop: "{{ RCS }}"
+      
