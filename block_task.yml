@@ -5,9 +5,9 @@
 - name: print server_list
   debug:
     msg: "El RC no es igual a 0. Es {{ server_list.results.rc }}"
-  when: server_list.results.rc != 0
+  when: server_list.rc != 0
 
 - name: print server_list
   debug:
     msg: "El RC es igual a 0"
-  when: server_list.results.rc == 0
+  when: server_list.rc == 0
