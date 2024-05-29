@@ -1,0 +1,13 @@
+---
+- name: "Banco Pichincha ::: Start Services WAS Omnicanal ::: Playbook para subir servicios de capa media WAS Omnicanal"
+  hosts: all
+  gather_facts: false
+  tasks:
+
+  - name: "Banco Pichincha ::: Start Services WAS Omnicanal ::: Inicia servicios"
+    ansible.builtin.command: echo {{ item }}
+    register: server_list
+    loop: '{{ servers }}'
+
+
+
