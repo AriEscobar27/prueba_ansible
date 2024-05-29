@@ -4,10 +4,10 @@
     
 - name: print server_list
   debug:
-    msg: "El RC no es igual a 0. Es {{ server_list.results.rc }}"
+    msg: "El RC del stop del servicio en {{ item.value }} no es igual a 0. Es {{ server_list.results.rc }}"
   when: server_list.rc != 0
 
 - name: print server_list
   debug:
-    msg: "El RC es igual a 0"
+    msg: "El RC del stop del servicio en {{ item.value }} es igual a 0"
   when: server_list.rc == 0
