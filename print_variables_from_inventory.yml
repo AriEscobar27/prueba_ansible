@@ -15,5 +15,5 @@
 
   - name: print rc
     debug:
-      msg: "{{ server_list.results.rc }}"
+      msg: "{{ server_list.results.rc[0] }}"
 
