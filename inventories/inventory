@@ -1,0 +1,20 @@
+all:
+  children:
+    prod:
+      hosts:
+        masterbp.corp.daytwo.cloud:
+          ansible_host: 192.168.222.170
+          dummy1: apple
+          dummy2: pie
+          servers:
+            server1: ansible
+            server2: openshift
+            server3: satellite
+        workerbp.corp.daytwo.cloud: 
+          ansible_host: 192.168.222.171
+          dummy1: strawberry
+          servers:
+            server1: rhds
+            server2: vmware
+            server3: kvm
+      
