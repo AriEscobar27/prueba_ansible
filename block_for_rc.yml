@@ -8,7 +8,7 @@
     loop: "{{ lookup('ansible.builtin.dict', servers) | list }}"
 
   - name: creacion file
-    ansible.builtin.command: echo "hola mundo" > /tmp/ari_prueba.txt
+    ansible.builtin.command: 'echo "hola mundo" > /tmp/ari_prueba.txt'
    
   - name: prueba until
     ansible.builtin.command: cat /tmp/ari_prueba.txt
