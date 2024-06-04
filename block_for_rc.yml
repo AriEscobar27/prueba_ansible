@@ -22,7 +22,7 @@
     ansible.builtin.command: 'cat /tmp/ari_prueba.txt | wc -l' 
     register: line_count
     changed_when: true
-    until: line_count == 5
+    until: line_count == 7
     retries: 20
     delay: 30
 
