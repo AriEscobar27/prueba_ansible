@@ -7,12 +7,16 @@
     include_tasks: block_task.yml
     loop: "{{ lookup('ansible.builtin.dict', servers) | list }}"
 
-  - name: prueba until
+  - name: creacion file
     ansible.builtin.command: echo "hola mundo" > /tmp/ari_prueba.txt
+   
+  - name: prueba until
+    ansible.builtin.command: cat /tmp/ari_prueba.txt
     register: stop_service_result
     changed_when: true
     until: "'ADMU4000I' in stop_service_result['stdout']"
     retries: 20
     delay: 30
+
 
 
