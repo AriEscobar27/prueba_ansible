@@ -20,7 +20,7 @@
   - name: prueba until 2
     ansible.builtin.shell: 'cat /tmp/ari_prueba.txt | wc -l' 
     register: line_count
-    until: line_count == 7
+    until: line_count == '9'
     retries: 20
     delay: 30
 
