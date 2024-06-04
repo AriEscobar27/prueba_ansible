@@ -18,5 +18,12 @@
     retries: 20
     delay: 30
 
+  - name: prueba until 2
+    ansible.builtin.command: 'cat /tmp/ari_prueba.txt | wc -l' 
+    register: line_count
+    changed_when: true
+    until: line_count == 5
+    retries: 20
+    delay: 30
 
 
