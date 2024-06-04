@@ -1,6 +1,6 @@
 ---
 - name: Block for RC
-  hosts: master
+  hosts: masterbp.corp.daytwo.cloud
   gather_facts: false
   tasks:
   - name: block for RC
