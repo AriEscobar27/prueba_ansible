@@ -21,6 +21,10 @@
 
   - name: prueba until 2
     ansible.builtin.shell: 'echo ${number}' 
+    register: output_ari
 
   - name: prueba until 2
     ansible.builtin.shell: 'echo {{ number }}' 
+
+  - debug:
+    msg: "{{ output_ari }}"
