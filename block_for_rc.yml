@@ -2,6 +2,8 @@
 - name: Block for RC
   hosts: masterbp.corp.daytwo.cloud
   gather_facts: false
+  vars:
+  - number: Mundo
   tasks:
   - name: block for RC
     include_tasks: block_task.yml
@@ -24,4 +26,8 @@
     retries: 20
     delay: 30
 
+  - name: prueba until 2
+    ansible.builtin.shell: 'echo ${number}' 
 
+  - name: prueba until 2
+    ansible.builtin.shell: 'echo {{number}}' 
