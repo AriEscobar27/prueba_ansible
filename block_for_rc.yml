@@ -28,3 +28,11 @@
 
   - debug:
       msg: "{{ output_ari }}"
+
+  - name: print var 1
+    ansible.builtin.command: 'echo "{{ password_test }}"> /tmp/ari_prueba.txt'
+
+  - name: print var 2
+    ansible.builtin.command: 'echo ${password_test_2}> /tmp/ari_prueba.txt'
+    environment:
+      password_test_2: "{{ password_test }}"
