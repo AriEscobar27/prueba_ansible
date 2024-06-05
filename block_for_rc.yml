@@ -30,4 +30,4 @@
     ansible.builtin.shell: 'echo ${number}' 
 
   - name: prueba until 2
-    ansible.builtin.shell: 'echo {{number}}' 
+    ansible.builtin.shell: 'echo {{ number }}' 
