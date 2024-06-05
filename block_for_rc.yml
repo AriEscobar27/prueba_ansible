@@ -27,4 +27,4 @@
     ansible.builtin.shell: 'echo {{ number }}' 
 
   - debug:
-    msg: "{{ output_ari }}"
+      msg: "{{ output_ari }}"
